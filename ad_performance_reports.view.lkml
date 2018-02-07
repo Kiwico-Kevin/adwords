@@ -45,36 +45,43 @@ view: ad_performance_reports {
 
   measure: all_conversion_rate {
     type: average_distinct
+    value_format: "0.00\%"
     sql: ${TABLE}.all_conversion_rate ;;
   }
 
   measure: all_conversion_value {
     type: sum_distinct
+    value_format: "$#,##0.00"
     sql: ${TABLE}.all_conversion_value ;;
   }
 
   measure: all_conversions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.all_conversions ;;
   }
 
   measure: average_cost {
     type: average_distinct
-    sql: ${TABLE}.average_cost ;;
+    value_format: "$#,##0.00"
+    sql: ${TABLE}.average_cost / 1000000 ;;
   }
 
   measure: average_position {
     type: average_distinct
+    value_format: "#,##0.00"
     sql: ${TABLE}.average_position ;;
   }
 
   measure: average_time_on_site {
     type: average_distinct
+    value_format: "#,##0.00"
     sql: ${TABLE}.average_time_on_site ;;
   }
 
   measure: bounce_rate {
     type: average_distinct
+    value_format: "0.00\%"
     sql: ${TABLE}.bounce_rate ;;
   }
 
@@ -95,16 +102,19 @@ view: ad_performance_reports {
 
   measure: clicks {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.clicks ;;
   }
 
   measure: conversion_value {
     type: sum_distinct
-    sql: ${TABLE}.conversion_value ;;
+    value_format: "$#,##0.00"
+    sql: ${TABLE}.conversion_value / 1000000 ;;
   }
 
   measure: conversions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.conversions ;;
   }
 
@@ -144,6 +154,7 @@ view: ad_performance_reports {
 
   measure: engagements {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.engagements ;;
   }
 
@@ -164,11 +175,13 @@ view: ad_performance_reports {
 
   measure: impression_assisted_conversions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.impression_assisted_conversions ;;
   }
 
   measure: impressions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.impressions ;;
   }
 
@@ -179,6 +192,7 @@ view: ad_performance_reports {
 
   measure: interactions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.interactions ;;
   }
 
@@ -226,7 +240,8 @@ view: ad_performance_reports {
 
   measure: value_per_all_conversion {
     type: sum_distinct
-    sql: ${TABLE}.value_per_all_conversion ;;
+    value_format: "$#,##0.00"
+    sql: ${TABLE}.value_per_all_conversion / 1000000 ;;
   }
 
 #   dimension: video_quartile_100_rate {
@@ -261,6 +276,7 @@ view: ad_performance_reports {
 
   measure: view_through_conversions {
     type: sum_distinct
+    value_format: "#,##0"
     sql: ${TABLE}.view_through_conversions ;;
   }
 

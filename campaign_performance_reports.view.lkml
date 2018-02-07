@@ -7,68 +7,68 @@ view: campaign_performance_reports {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: active_view_impressions {
-    type: number
-    sql: ${TABLE}.active_view_impressions ;;
-  }
-
-  dimension: active_view_measurability {
-    type: number
-    sql: ${TABLE}.active_view_measurability ;;
-  }
-
-  dimension: active_view_measurable_cost {
-    type: number
-    sql: ${TABLE}.active_view_measurable_cost ;;
-  }
-
-  dimension: active_view_measurable_impressions {
-    type: number
-    sql: ${TABLE}.active_view_measurable_impressions ;;
-  }
-
-  dimension: active_view_viewability {
-    type: number
-    sql: ${TABLE}.active_view_viewability ;;
-  }
+#   dimension: active_view_impressions {
+#     type: number
+#     sql: ${TABLE}.active_view_impressions ;;
+#   }
+#
+#   dimension: active_view_measurability {
+#     type: number
+#     sql: ${TABLE}.active_view_measurability ;;
+#   }
+#
+#   dimension: active_view_measurable_cost {
+#     type: number
+#     sql: ${TABLE}.active_view_measurable_cost ;;
+#   }
+#
+#   dimension: active_view_measurable_impressions {
+#     type: number
+#     sql: ${TABLE}.active_view_measurable_impressions ;;
+#   }
+#
+#   dimension: active_view_viewability {
+#     type: number
+#     sql: ${TABLE}.active_view_viewability ;;
+#   }
 
   dimension: adwords_customer_id {
     type: string
     sql: ${TABLE}.adwords_customer_id ;;
   }
 
-  dimension: all_conversion_rate {
-    type: number
+  measure: all_conversion_rate {
+    type: average_distinct
     sql: ${TABLE}.all_conversion_rate ;;
   }
 
-  dimension: all_conversion_value {
-    type: number
+  measure: all_conversion_value {
+    type: sum_distinct
     sql: ${TABLE}.all_conversion_value ;;
   }
 
-  dimension: all_conversions {
-    type: number
+  measure: all_conversions {
+    type: sum_distinct
     sql: ${TABLE}.all_conversions ;;
   }
 
-  dimension: amount {
-    type: number
+  measure: amount {
+    type: sum_distinct
     sql: ${TABLE}.amount ;;
   }
 
-  dimension: average_cost {
-    type: number
+  measure: average_cost {
+    type: average_distinct
     sql: ${TABLE}.average_cost ;;
   }
 
-  dimension: average_position {
-    type: number
+  measure: average_position {
+    type: average_distinct
     sql: ${TABLE}.average_position ;;
   }
 
-  dimension: average_time_on_site {
-    type: number
+  measure: average_time_on_site {
+    type: average_distinct
     sql: ${TABLE}.average_time_on_site ;;
   }
 
