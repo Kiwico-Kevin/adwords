@@ -47,6 +47,31 @@ explore: ad_performance_reports {
     sql_on: ${ad_groups.campaign_id} = ${campaigns.id} ;;
     relationship: many_to_one
   }
+
+  join: pages {
+    type:  left_outer
+    sql_on:  ${ads.ad_group_id} = ${pages.utm_content} ;;
+    relationship:  many_to_many
+    required_joins: [ads]
+  }
+  join: users {
+    type: left_outer
+    sql_on: ${pages.user_id} = ${users.id} ;;
+    relationship: many_to_one
+    required_joins: [pages]
+  }
+  join: completed_order {
+    type: left_outer
+    sql_on: ${pages.anonymous_id} = ${completed_order.anonymous_id} ;;
+    relationship: many_to_many
+    required_joins: [pages]
+  }
+  join: email_submitted {
+    type: left_outer
+    sql_on: ${pages.anonymous_id} = ${email_submitted.anonymous_id} ;;
+    relationship: many_to_many
+    required_joins: [pages]
+  }
 }
 
 # explore: ad_performance_reports_view {
