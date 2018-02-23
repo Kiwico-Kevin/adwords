@@ -50,6 +50,14 @@ view: campaigns {
     sql: ${TABLE}.name LIKE '%Brand%' ;;
   }
 
+  dimension: brandedStatus {
+    type: string
+    sql:
+    CASE WHEN ${TABLE}.name LIKE '%Brand%' THEN 'Branded'
+    ELSE 'Unbranded'
+    END;;
+  }
+
 #   dimension_group: received {
 #     type: time
 #     timeframes: [
