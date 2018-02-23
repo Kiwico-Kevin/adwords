@@ -45,6 +45,11 @@ view: campaigns {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: branded {
+    type: yesno
+    sql: ${TABLE}.name LIKE '%Brand%' ;;
+  }
+
 #   dimension_group: received {
 #     type: time
 #     timeframes: [
